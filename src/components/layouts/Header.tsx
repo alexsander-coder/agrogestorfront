@@ -1,5 +1,5 @@
 "use client"
-
+//repost de operação
 import { useState, useRef, useEffect } from "react"
 import { useAuth } from "@/hooks/useAuth"
 
@@ -33,7 +33,7 @@ export default function Header() {
                      px-2 sm:px-3 md:px-4
                      py-1.5 sm:py-2
                      text-sm
-                     text-gray-700
+                     text-gray-500
                      placeholder-gray-400
                      bg-white
                      rounded-lg 
@@ -49,18 +49,18 @@ export default function Header() {
           className="flex items-center gap-2"
         >
           <img
-            src="/avatar.png"
+            src="/avatar.jpg"
             className="w-8 h-8 rounded-full"
           />
         </button>
 
         {open && (
           <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">
-            <button className="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <button className="w-full text-left text-gray-600 px-4 py-2 hover:bg-gray-100">
               Perfil
             </button>
 
-            <button className="w-full text-left px-4 py-2 hover:bg-gray-100">
+            <button className="w-full text-left text-gray-600 px-4 py-2 hover:bg-gray-100">
               Configurações
             </button>
 
