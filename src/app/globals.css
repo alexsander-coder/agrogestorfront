@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Rocketseat palette */
+  --rocket-primary: #643cbb;
+  --rocket-primary-hover: #5429cc;
+  --rocket-secondary: #8a65dc;
+  --rocket-dark: #34265e;
+  --rocket-muted: #707c84;
+  --rocket-light: #aa9abe;
+  --rocket-bg: #f8f7fc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-rocket-primary: var(--rocket-primary);
+  --color-rocket-primary-hover: var(--rocket-primary-hover);
+  --color-rocket-secondary: var(--rocket-secondary);
+  --color-rocket-dark: var(--rocket-dark);
+  --color-rocket-muted: var(--rocket-muted);
+  --color-rocket-light: var(--rocket-light);
+  --color-rocket-bg: var(--rocket-bg);
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
