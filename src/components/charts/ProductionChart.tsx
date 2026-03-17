@@ -16,7 +16,7 @@ function ProductionChart({ data }: any) {
 
   return (
     <div className="bg-white p-3 rounded-xl shadow-sm">
-      <h3 className="text-sm font-medium mb-4">Produção</h3>
+      <h3 className="text-sm text-gray-600 font-medium mb-4">Produção</h3>
 
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={chartData}>

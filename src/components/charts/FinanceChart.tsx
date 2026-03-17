@@ -25,7 +25,7 @@ function FinanceChart({ data }: any) {
   return (
     <div className="bg-white p-5 rounded-2xl shadow-sm">
       <div className="flex justify-between mb-4">
-        <h3 className="text-sm font-semibold">Movimentações Financeiras</h3>
+        <h3 className="text-sm text-gray-600 font-semibold">Movimentações Financeiras</h3>
         <span className="text-sm text-green-600 cursor-pointer">Ver todas</span>
       </div>
 

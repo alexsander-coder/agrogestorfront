@@ -16,7 +16,7 @@ function MonthlyChart({ data }: any) {
 
   return (
     <div className="bg-white p-5 rounded-2xl shadow-sm">
-      <h3 className="text-sm font-semibold mb-4">
+      <h3 className="text-sm text-gray-600 font-semibold mb-4">
         Consumo / Evolução
       </h3>
 

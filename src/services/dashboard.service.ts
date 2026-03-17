@@ -4,5 +4,6 @@ export const dashboardService = {
   getProduction: () => api.get("/dashboard/charts/production"),
   getFinance: () => api.get("/dashboard/charts/finance"),
   getMonthly: () => api.get("/dashboard/charts/finance/monthly"),
-  getOverview: () => api.get("/dashboard/overview")
+  getOverview: () => api.get("/dashboard/overview"),
+  getLowStockItems: () => api.get("/estoque/item")
 }

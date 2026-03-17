@@ -7,24 +7,27 @@ import ProductionChart from "@/components/charts/ProductionChart"
 import FinanceChart from "@/components/charts/FinanceChart"
 import MonthlyChart from "@/components/charts/MonthlyChart"
 import OverviewCards from "@/components/dashboard/OverviewCards"
+import LowStockTable from "@/components/dashboard/LowStockTable"
 
 function DashboardPage() {
   const [data, setData] = useState<any>(null)
 
   useEffect(() => {
     async function load() {
-      const [prod, fin, monthly, overview] = await Promise.all([
+      const [prod, fin, monthly, overview, stock] = await Promise.all([
         dashboardService.getProduction(),
         dashboardService.getFinance(),
         dashboardService.getMonthly(),
-        dashboardService.getOverview()
+        dashboardService.getOverview(),
+        dashboardService.getLowStockItems()
       ])
 
       setData({
         production: prod.data,
         finance: fin.data,
         monthly: monthly.data,
-        overview: overview.data
+        overview: overview.data,
+        stock: stock.data
       })
     }
 
@@ -61,13 +64,17 @@ function DashboardPage() {
           <FinanceChart data={data.monthly} />
         </div>
 
+        {/* estoque baixo */}
+        <LowStockTable items={data.stock} />
+
         {/* gráfico lateral */}
         <MonthlyChart data={data.monthly} />
 
+        {/* gráfico inferior */}
+        <ProductionChart data={data.production} />
+
       </div>
 
-      {/* gráfico inferior */}
-      <ProductionChart data={data.production} />
 
     </div>
   )
