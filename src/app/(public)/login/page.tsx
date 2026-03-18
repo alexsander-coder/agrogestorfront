@@ -11,7 +11,7 @@ export default function LoginPage() {
         <div className="mt-6 pt-6 border-t border-gray-100 flex justify-center items-center gap-6 text-sm">
           <Link
             href="/register"
-            className="text-rocket-primary underline underline-offset-4 hover:decoration-2"
+            className="text-[#0d2418] underline underline-offset-4 hover:decoration-2"
           >
             Criar conta
           </Link>

@@ -6,11 +6,11 @@ export default function AuthSplitLayout({ children }: AuthSplitLayoutProps) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-rocket-bg px-4">
       <div className="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden flex">
-        {/* Painel esquerdo: branding — mesmo tamanho do formulário, some abaixo de 700px */}
-        <aside className="hidden min-[701px]:flex w-1/2 items-center justify-center bg-rocket-dark text-white p-8 border-r border-white/10">
+        {/* Painel esquerdo: branding — mesmo tamanho do formulário, some abaixo de 700px  bg-[#0d1900]  0d2418*/}
+        <aside className="hidden min-[701px]:flex w-1/2 items-center justify-center bg-[#0d2418] text-white p-8 border-r border-white/10">
           <div className="max-w-sm space-y-4">
             <div className="text-center">
-              <p className="text-sm uppercase tracking-[0.25em] text-rocket-light">
+              <p className="text-sm uppercase tracking-[0.25em] text-[#8468a7]">
                 Agro Gestor
               </p>
             </div>

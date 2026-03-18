@@ -38,7 +38,7 @@ export default function RegisterForm() {
       const message =
         err && typeof err === "object" && "response" in err
           ? (err as { response?: { data?: { message?: string } } }).response
-              ?.data?.message
+            ?.data?.message
           : null
       setError(
         message || "Não foi possível criar a conta. Tente novamente."
@@ -100,7 +100,7 @@ export default function RegisterForm() {
 
       <button
         type="submit"
-        className="w-full py-3 rounded-xl bg-rocket-primary hover:bg-rocket-primary-hover text-white font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none"
+        className="w-full py-3 rounded-xl bg-[#0d2418] hover:bg-[#0d1900] text-white font-medium transition-colors disabled:opacity-50 disabled:pointer-events-none"
         disabled={loading}
       >
         {loading ? "Criando conta..." : "Criar conta"}

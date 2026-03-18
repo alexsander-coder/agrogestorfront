@@ -58,7 +58,7 @@ export default function LoginForm() {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="px-15 py-2.5 rounded-xl bg-rocket-primary hover:bg-rocket-primary-hover text-white font-medium transition-colors disabled:opacity-50"
+          className="px-15 py-2.5 rounded-xl bg-[#0d2418] hover:bg-rocket-primary-hover text-white font-medium transition-colors disabled:opacity-50"
           disabled={loading}
         >
           {loading ? "Entrando..." : "Entrar"}
