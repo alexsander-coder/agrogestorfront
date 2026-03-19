@@ -8,18 +8,29 @@ import FinanceChart from "@/components/charts/FinanceChart"
 import MonthlyChart from "@/components/charts/MonthlyChart"
 import OverviewCards from "@/components/dashboard/OverviewCards"
 import LowStockTable from "@/components/dashboard/LowStockTable"
+import DieselConsumptionCard from "@/components/dashboard/DieselConsumptionCard"
+
+function getCurrentMonth() {
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = String(now.getMonth() + 1).padStart(2, "0")
+  return `${year}-${month}`
+}
 
 function DashboardPage() {
   const [data, setData] = useState<any>(null)
 
   useEffect(() => {
     async function load() {
-      const [prod, fin, monthly, overview, stock] = await Promise.all([
+      const currentMonth = getCurrentMonth()
+
+      const [prod, fin, monthly, overview, stock, diesel] = await Promise.all([
         dashboardService.getProduction(),
         dashboardService.getFinance(),
         dashboardService.getMonthly(),
         dashboardService.getOverview(),
-        dashboardService.getLowStockItems()
+        dashboardService.getLowStockItems(),
+        dashboardService.getDieselConsumption(currentMonth),
       ])
 
       setData({
@@ -27,7 +38,8 @@ function DashboardPage() {
         finance: fin.data,
         monthly: monthly.data,
         overview: overview.data,
-        stock: stock.data
+        stock: stock.data,
+        diesel: diesel.data,
       })
     }
 
@@ -44,8 +56,6 @@ function DashboardPage() {
 
   return (
     <div className="space-y-6">
-
-      {/* Header da página */}
       <div>
         <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
         <p className="text-sm text-gray-500">
@@ -53,29 +63,24 @@ function DashboardPage() {
         </p>
       </div>
 
-      {/* Cards */}
       <OverviewCards data={data.overview} />
 
-      {/* Gráficos principais */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-        {/* gráfico grande */}
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-1">
           <FinanceChart data={data.monthly} />
         </div>
 
-        {/* estoque baixo */}
         <LowStockTable items={data.stock} />
 
-        {/* gráfico lateral */}
+
         <MonthlyChart data={data.monthly} />
 
-        {/* gráfico inferior */}
+        <div className="lg:col-span-2">
+          <DieselConsumptionCard refuels={data.diesel} />
+        </div>
+
         <ProductionChart data={data.production} />
-
       </div>
-
-
     </div>
   )
 }

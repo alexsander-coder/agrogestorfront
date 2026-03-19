@@ -8,7 +8,7 @@ type Item = {
 }
 
 export default function StockTable({ items }: { items: Item[] }) {
-  // Ordena do menor estoque para o maior
+  //Ordena do menor estoque para o maior
   const sortedItems = [...items].sort((a, b) => a.stock - b.stock)
 
   return (
