@@ -31,17 +31,47 @@ export default function Sidebar({ collapsed }: { collapsed: boolean }) {
         { name: "Custo por Plantio", href: "/dashboard/custo-plantio" }
       ]
     },
-    { name: "Estoque", href: "/estoque", icon: Package },
+    {
+      name: "Estoque",
+      icon: Package,
+      children: [
+        { name: "Visão Geral", href: "/estoque" },
+        { name: "Cadastrar Item", href: "/estoque/novo" },
+        { name: "Entrada", href: "/estoque/entrada" },
+        { name: "Saída", href: "/estoque/saida" },
+        { name: "Ajuste de Estoque", href: "/estoque/ajuste" }
+      ]
+    },
     { name: "Funcionários", href: "/funcionarios", icon: Users },
-    { name: "Plantio", href: "/plantio", icon: Sprout },
+    {
+      name: "Plantio",
+      icon: Sprout,
+      children: [
+        { name: "Plantios", href: "/plantio" },
+        { name: "Novo Plantio", href: "/plantio/novo" },
+        { name: "Culturas", href: "/plantio/culturas" },
+        { name: "Cadastrar Cultura", href: "/plantio/culturas/novo" },
+        { name: "Áreas", href: "/plantio/areas" },
+        { name: "Cadastrar Área", href: "/plantio/areas/novo" }
+      ]
+    },
     { name: "Frota", href: "/frota", icon: Truck },
     { name: "Diesel", href: "/diesel", icon: Fuel },
-    { name: "Temporada", href: "/temporada", icon: Calendar },
+    {
+      name: "Temporada",
+      icon: Calendar,
+      children: [
+        { name: "Safras", href: "/temporada" },
+        { name: "Cadastrar Safra", href: "/temporada/novo" }
+      ]
+    },
     { name: "Colheita", href: "/colheita", icon: Wheat },
     {
       name: "Caixa",
       icon: Wallet,
       children: [
+        { name: "Contas Caixa", href: "/caixa" },
+        { name: "Cadastrar Caixa", href: "/caixa/novo" },
         { name: "Entrada Financeira", href: "/caixa/entrada" },
         { name: "Vendas", href: "/caixa/vendas" }
       ]
