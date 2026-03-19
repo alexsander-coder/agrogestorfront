@@ -57,7 +57,7 @@ function DashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-gray-800">Dashboard</h1>
+        <h1 className="text-1xl font-semibold text-gray-800">Dashboard</h1>
         <p className="text-sm text-gray-500">
           Visão geral da fazenda
         </p>
@@ -72,14 +72,13 @@ function DashboardPage() {
 
         <LowStockTable items={data.stock} />
 
-
-        <MonthlyChart data={data.monthly} />
+        <ProductionChart data={data.production} />
 
         <div className="lg:col-span-2">
           <DieselConsumptionCard refuels={data.diesel} />
         </div>
 
-        <ProductionChart data={data.production} />
+        <MonthlyChart data={data.monthly} />
       </div>
     </div>
   )

@@ -76,7 +76,7 @@ function OverviewCards({ data }: any) {
 
             <p
               className={`
-                mt-3 text-[1.3rem] font-semibold tracking-tight
+                mt-3 text-[1.2rem] font-semibold tracking-tight
                 ${card.highlight ?? "text-gray-900"}
               `}
             >
